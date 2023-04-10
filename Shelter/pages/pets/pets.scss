@@ -1,0 +1,97 @@
+@import '../../common/styles/common';
+
+.header {
+  min-height: 120px;
+
+  .logo {
+    &__link {
+      text-decoration: none;
+    }
+
+    &__title {
+      color: $color-dark-l;
+    }
+    
+    &__subtitle {
+      color: $color-dark-3xl;
+    }
+  }
+
+  .menu {
+
+    &__link {
+      color: $color-dark-l;
+  
+      &:hover {
+        color: $color-dark-3xl;
+      }
+    }
+
+    .active .menu__link {
+      color: $color-dark-3xl;
+      cursor: default;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        border-bottom: 3px solid $color-primary;
+      }
+    }
+
+    &__list {
+      @media (max-width: 767.5px) {
+        background-color: $color-dark-m;
+      }
+    }
+
+    & .hamburger span {
+      background-color: black;
+    }
+  }
+}
+
+section:nth-child(odd) {
+  background-color: $color-light-l;
+}
+
+.our-friends {
+  min-height: 1342px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 100px;
+    text-align: center;
+
+    @include tablet {
+      padding: 80px 0 75px;
+    }
+
+    @include mobile {
+      padding: 40px 0 45px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    justify-content: center;
+    gap: 30px 40px;
+    width: 100%;
+    margin: 55px 0;
+
+    @include tablet {
+      margin: 30px 0 40px;
+    }
+
+    @include mobile {
+      margin: 40px 0;
+    }
+  }
+}
